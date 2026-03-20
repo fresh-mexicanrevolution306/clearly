@@ -2,6 +2,9 @@
 
 ## [Unreleased]
 
+## [1.2.1] - 2026-03-19
+- Fixed auto-update failing with "error launching the installer"
+
 ## [1.2.0] - 2026-03-19
 - Your preferred view mode (editor, preview, or side-by-side) is now remembered across sessions
 - Editor and preview scroll together so you always see what you're editing
