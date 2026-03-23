@@ -2,6 +2,14 @@
 
 ## [Unreleased]
 
+## [1.6.0] - 2026-03-23
+- Frontmatter blocks (title, date, tags) are formatted in the editor and rendered cleanly in preview
+- Markdown file links are clickable in preview mode — click to open linked documents
+- Math expressions now use bundled KaTeX for faster, offline rendering
+- The Open Recent menu shows full file paths so you can tell apart files with the same name
+- Text and cursor are vertically centered within editor lines for better readability
+- New styled DMG installer with drag-to-Applications support
+
 ## [1.5.0] - 2026-03-21
 - Paste images directly into the editor — they're saved alongside your document and render in preview
 - Fixed markdown files not opening correctly from some apps due to a non-standard file type declaration
