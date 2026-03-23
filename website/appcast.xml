@@ -3,6 +3,20 @@
   <channel>
     <title>Clearly</title>
     <item>
+      <title>Version 1.6.0</title>
+      <sparkle:version>1.6.0</sparkle:version>
+      <sparkle:shortVersionString>1.6.0</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+      <pubDate>Mon, 23 Mar 2026 13:00:56 +0000</pubDate>
+      <description><![CDATA[<ul><li>Frontmatter blocks (title, date, tags) are formatted in the editor and rendered cleanly in preview</li><li>Markdown file links are clickable in preview mode — click to open linked documents</li><li>Math expressions now use bundled KaTeX for faster, offline rendering</li><li>The Open Recent menu shows full file paths so you can tell apart files with the same name</li><li>Text and cursor are vertically centered within editor lines for better readability</li><li>New styled DMG installer with drag-to-Applications support</li></ul>]]></description>
+      <enclosure
+        url="https://github.com/Shpigford/clearly/releases/download/v1.6.0/Clearly.dmg"
+        sparkle:edSignature="P5Z/kGRF/rHa3U5VGayEy7q52s1mGqqtRld6V1R49196nOhdYZmygmKfBKrbhOxSS4Cc9oyxCLI9SetLkiYOCA=="
+        length="6454331"
+        type="application/octet-stream"
+      />
+    </item>
+    <item>
       <title>Version 1.5.0</title>
       <sparkle:version>1.5.0</sparkle:version>
       <sparkle:shortVersionString>1.5.0</sparkle:shortVersionString>
