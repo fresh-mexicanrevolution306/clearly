@@ -2,6 +2,10 @@
 
 ## [Unreleased]
 
+## [1.7.3] - 2026-03-26
+- Opening multiple documents at once no longer causes the app to hang
+- Appearance setting correctly applies your chosen light or dark mode
+
 ## [1.7.2] - 2026-03-26
 - Diagnostic logs now survive force-quit and include previous session entries
 - Faster document opening with fewer redundant highlighting passes
