@@ -2,6 +2,10 @@
 
 ## [Unreleased]
 
+## [1.10.1] - 2026-04-03
+- New documents open in front instead of behind existing windows
+- Outline panel no longer overlaps the preview in side-by-side mode
+
 ## [1.10.0] - 2026-04-02
 - Document outline panel lets you jump to any heading with a click
 - Native spell checking with persistent preferences for each document
